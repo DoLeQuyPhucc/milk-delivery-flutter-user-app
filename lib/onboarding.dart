@@ -51,8 +51,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Text(
                       controller.items[currentIndex].title,
                       style: const TextStyle(
-                          fontSize: 25,
-                          color: primaryColor,
+                          fontSize: 22,
+                          fontFamily: 'Montserrat',
+                          color: Colors.black87,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center,
                     ),
@@ -63,7 +64,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       child: Text(
                         controller.items[currentIndex].description,
                         style:
-                            const TextStyle(color: Colors.grey, fontSize: 16),
+                            const TextStyle(color: Colors.blueGrey, fontSize: 16),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -85,7 +86,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               margin: const EdgeInsets.symmetric(horizontal: 2),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: currentIndex == index ? primaryColor : Colors.grey,
+                color: currentIndex == index ? Colors.orange[900] : Colors.grey,
               ),
               height: 7,
               width: currentIndex == index ? 30 : 7,
@@ -100,12 +101,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
       width: MediaQuery.of(context).size.width * .9,
       height: 55,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8), color: primaryColor),
+          borderRadius: BorderRadius.circular(25), color: Colors.orange[900]),
       child: TextButton(
         onPressed: () {
           setState(() {
             if (currentIndex == controller.items.length - 1) {
-              Navigator.pushReplacementNamed(context, '/home');
+              Navigator.pushReplacementNamed(context, '/dashboard');
             } else {
               currentIndex++;
             }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:milk_delivery_flutter_user_app/onboarding.dart';
-import 'package:milk_delivery_flutter_user_app/screens/home/home_screen.dart';
+import 'package:milk_delivery_flutter_user_app/screens/dashboard/dashboard_screen.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'components/flutter_flow_theme.dart';
+import 'components/flutter_flow_util.dart';
 
-void main() {
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
@@ -13,6 +16,13 @@ void main() {
         systemNavigationBarIconBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.dark,
       ));
+
+  WidgetsFlutterBinding.ensureInitialized();
+  GoRouter.optionURLReflectsImperativeAPIs = true;
+  usePathUrlStrategy();
+
+  await FlutterFlowTheme.initialize();
+
   runApp(const MyApp());
 }
 
@@ -30,7 +40,7 @@ class MyApp extends StatelessWidget {
       ),
       home: const OnboardingPage(),
       routes: {
-        '/home': (context) => const HomeScreen(),
+        '/dashboard': (context) => const DashboardScreen(),
       },
     );
   }
