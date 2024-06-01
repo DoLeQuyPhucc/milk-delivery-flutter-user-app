@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:milk_delivery_flutter_user_app/onboarding.dart';
-import 'package:milk_delivery_flutter_user_app/screens/dashboard/dashboard_screen.dart';
+import 'package:milk_delivery_flutter_user_app/routes/routes.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'components/flutter_flow_theme.dart';
 import 'components/flutter_flow_util.dart';
@@ -39,9 +39,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const OnboardingPage(),
-      routes: {
-        '/dashboard': (context) => const DashboardScreen(),
-      },
+      routes: AppRoutes.define(),
     );
   }
 }

@@ -20,8 +20,8 @@ class DotsIndicator extends StatelessWidget {
         return GestureDetector(
           onTap: () => controller.animateToPage(entry.key),
           child: Container(
-            width: 9.0,
-            height: 9.0,
+            width: 8.0,
+            height: 8.0,
             margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 4.0),
             decoration: BoxDecoration(
               shape: BoxShape.circle,

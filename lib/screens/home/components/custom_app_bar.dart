@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
                   icon: const Icon(Icons.notifications),
                   iconSize: 30.0, // Increase the icon size
                   onPressed: () {
-                    // Implement your cart functionality here
+                    Navigator.pushReplacementNamed(context, '/onboarding');
                   },
                 ),
                 Positioned(

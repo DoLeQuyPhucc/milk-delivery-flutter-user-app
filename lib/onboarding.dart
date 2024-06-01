@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:milk_delivery_flutter_user_app/Components/color.dart';
 import 'package:milk_delivery_flutter_user_app/Components/onboarding_data.dart';
 
 class OnboardingPage extends StatefulWidget {

@@ -14,12 +14,8 @@ class CustomCarousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const BorderRadius borderRadius = BorderRadius.only(
-      topLeft: Radius.circular(15),
-      bottomLeft: Radius.circular(15),
-      bottomRight: Radius.circular(15),
-    );
-
+    const BorderRadius borderRadius = BorderRadius.all(Radius.circular(15));
+    
     return SizedBox(
       height: 200,
       child: ClipRRect(
@@ -48,10 +44,10 @@ class CustomCarousel extends StatelessWidget {
               }).toList(),
               carouselController: controller,
               options: CarouselOptions(
-                height: 200,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),
                 enlargeCenterPage: true,
+                viewportFraction: 0.83,
                 onPageChanged: (index, reason) {
                   onPageChanged(index);
                 },

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:milk_delivery_flutter_user_app/screens/home/components/custome_app_bar.dart';
+import 'package:milk_delivery_flutter_user_app/screens/home/components/custom_app_bar.dart';
 
 import 'components/custom_carousel.dart';
 import 'components/dots_indicator.dart';
 import 'components/logo_row.dart';
+import 'components/product_sale.dart';
+import 'components/product_sale_section.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,29 +16,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // Border radius for the banner
-  final BorderRadius borderRadius = const BorderRadius.only(
-    topLeft: Radius.circular(20),
-    bottomLeft: Radius.circular(20),
-    bottomRight: Radius.circular(20),
-  );
-
-  // Border radius for the logo
-  final BorderRadius borderRadiusLogo = const BorderRadius.only(
-    topLeft: Radius.circular(10),
-    bottomLeft: Radius.circular(10),
-    bottomRight: Radius.circular(10),
-  );
-
-  // Border for the logo
-  final Border borderLogo = Border.all(color: Colors.blue, width: 1);
-
   final List<String> bannerImages = [
     'assets/banner01.jpg',
     'assets/banner02.jpg',
     'assets/banner03.jpg',
     'assets/banner04.jpg',
     'assets/banner05.jpg',
+  ];
+
+  final List<Widget> promotionCards = [
+    const PromotionCard(
+      imagePath: 'assets/banner01.jpg',
+      productName: 'TH True Milk Hilo',
+      volume: '180 ml',
+      discount: '10%',
+      price: '400.000 VND',
+      oldPrice: '450.000 VND',
+      rating: 4,
+    ),
+    // Add more PromotionCard widgets here
   ];
 
   final CarouselController _controller = CarouselController();
@@ -70,6 +68,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(height: 10),
               const LogoRow(),
+              const SizedBox(height: 30),
+              PromotionSection(promotionCards: promotionCards),
             ],
           ),
         ),
